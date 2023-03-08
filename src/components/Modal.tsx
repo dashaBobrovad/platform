@@ -7,7 +7,7 @@ interface IModalProps {
   closeModal: () => void;
   item: ITableRow;
 }
-export const Modal = ({ closeModal, item }: IModalProps) => {
+const Modal = ({ closeModal, item }: IModalProps) => {
   return (
     <div className={s.modal}>
       <div className={s.modal__dialog}>
@@ -35,3 +35,5 @@ export const Modal = ({ closeModal, item }: IModalProps) => {
     </div>
   );
 };
+
+export default React.memo(Modal)
