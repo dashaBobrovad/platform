@@ -20,7 +20,7 @@ export const TableHead = ({
         {/* <input name="column" type="checkbox" value="1" onClick={() => toggleColumn()} checked /> */}
         {columns &&
           columns.map((item: string, index: number) => (
-            <td key={item} className={hiddenColumn === index ? "hide" : ""}>
+            <th key={item} className={hiddenColumn === index ? "hide" : ""}>
               {isEdit ? (
                 <EditableTableHeadCell
                   value={columns[index]}
@@ -30,7 +30,7 @@ export const TableHead = ({
                 <span>{item}</span>
               )}
               <button onClick={() => toggleColumn(index)}>hide</button>
-            </td>
+            </th>
           ))}
       </tr>
     </thead>
