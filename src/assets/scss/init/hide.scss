@@ -1,0 +1,7 @@
+.hide {
+  &-column {
+    max-width: 40px;
+    overflow: hidden;
+    opacity: 0.5;
+  }
+}

@@ -12,12 +12,6 @@ export const EditableTableHeadCell = ({
   const [state, setState] = useState(item.name);
 
   return (
-    // <input
-    //   value={value}
-    //   onChange={({ target }) => changeValues(target.value, index)}
-    //   type="text"
-    //   name={value}
-    // />
     <input
       value={state}
       onChange={({ target }) => setState(target.value)}

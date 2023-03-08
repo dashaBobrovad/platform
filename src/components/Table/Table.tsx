@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchTableData } from "../../data/asyncActions/data";
 import usePagination from "../../data/hooks/usePagination";
 import { useTypedDispatch } from "../../data/hooks/useTypedDispatch";
@@ -31,14 +31,8 @@ export const Table = () => {
       );
   }, [tableData]);
 
-  const [hiddenColumn, setHiddenColumn] = useState<null | number>(null);
-
-  const toggleColumn = (id: number) => {
-    setHiddenColumn(id);
-  };
-
   const [page, setPage] = useState<number>(1);
-  const { slice, range } = usePagination(tableData, page, 4);
+  const { slice, range } = usePagination(tableData, page, 20);
 
   const [isEdit, setIsEdit] = useState<boolean>(false);
 
@@ -64,8 +58,6 @@ export const Table = () => {
         {keys.length > 0 && (
           <TableHead
             columns={keys}
-            hiddenColumn={hiddenColumn}
-            toggleColumn={toggleColumn}
             isEdit={isEdit}
             setKeys={setKeys}
           />

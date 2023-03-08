@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import s from "../assets/scss/Modal.module.scss";
+import s from "../assets/scss/components/Modal.module.scss";
 import { ITableRow } from "../types/ITableRow";
 
 interface IModalProps {

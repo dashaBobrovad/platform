@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import s from "../../assets/scss/TableFooter.module.scss";
+import s from "../../assets/scss/components/TableFooter.module.scss";
 import { ITableRow } from "../../types/ITableRow";
 
 interface ITableFooter {
@@ -21,8 +21,8 @@ export const TableFooter = ({ range, setPage, page, slice }: ITableFooter) => {
       {range.map((el: number, index: number) => (
         <button
           key={index}
-          className={`${s.button} ${
-            page === el ? s.activeButton : s.inactiveButton
+          className={`${s.tableFooter__button} ${
+            page === el ? s.tableFooter__activeButton : s.tableFooter__inactiveButton
           }`}
           onClick={() => setPage(el)}
         >
