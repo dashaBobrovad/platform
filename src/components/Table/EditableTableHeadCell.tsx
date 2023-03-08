@@ -4,17 +4,18 @@ import { IKey } from "../../types/IKey";
 interface IEditableTableHeadCell {
   item: IKey;
   index: number;
+  changeName: (index: number, name: string) => void;
 }
 export const EditableTableHeadCell = ({
   item,
   index,
+  changeName,
 }: IEditableTableHeadCell) => {
-  const [state, setState] = useState(item.name);
 
   return (
     <input
-      value={state}
-      onChange={({ target }) => setState(target.value)}
+      value={item.name}
+      onChange={(e) => changeName(index, e.target.value)}
       type="text"
       name={item.key}
     />

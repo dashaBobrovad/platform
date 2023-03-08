@@ -1,3 +1,4 @@
+import { IKey } from './../../types/IKey';
 import { ITableRow } from "./../../types/ITableRow";
 import {
   ITableState,
@@ -6,7 +7,8 @@ import {
 } from "../../types/tableReducerTypes";
 
 const initialState: ITableState = {
-  data: []
+  data: [],
+  columns: [],
 };
 
 const tableReducer = (
@@ -24,7 +26,7 @@ const tableReducer = (
   }
 };
 
-const getTableDataAction = (payload: ITableRow[]) => ({
+const getTableDataAction = (payload: ITableRow[]): TableAction => ({
   type: TableActionTypes.GET_DATA,
   payload,
 });

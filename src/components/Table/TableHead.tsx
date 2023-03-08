@@ -5,9 +5,10 @@ import { IKey } from "../../types/IKey";
 interface ITableHead {
   columns: IKey[];
   isEdit: boolean;
-  setKeys: any;
+  setKeys: React.Dispatch<React.SetStateAction<IKey[]>>;
 }
 export const TableHead = ({ columns, isEdit, setKeys }: ITableHead) => {
+
   const handleHide = (index: number, isHidden: boolean) => {
     setKeys((prev: IKey[]) =>
       prev.map((item: IKey) =>
@@ -15,6 +16,13 @@ export const TableHead = ({ columns, isEdit, setKeys }: ITableHead) => {
       )
     );
   };
+
+  const changeName = (index: number, name: string) => {
+      const copyKeys = [...columns];
+      copyKeys[index].name = name;
+      setKeys(copyKeys);
+  }
+
   return (
     <thead>
       <tr>
@@ -22,7 +30,7 @@ export const TableHead = ({ columns, isEdit, setKeys }: ITableHead) => {
           columns.map((item: IKey, index: number) => (
             <th key={item.key} className={item.isHidden ? "hide-column" : ""}>
               {isEdit ? (
-                <EditableTableHeadCell item={item} index={index} />
+                <EditableTableHeadCell item={item} index={index} changeName={changeName} />
               ) : (
                 <span>{item.name}</span>
               )}

@@ -20,14 +20,13 @@ export const Table = () => {
   useEffect(() => {
     tableData.length > 0 &&
       setKeys(
-        Object.keys(tableData[0]).map((key, index) => {
-          return {
+        Object.keys(tableData[0]).map((key, index) => ({
             id: index,
             key: key,
             name: key,
             isHidden: false,
-          };
-        })
+          })
+        )
       );
   }, [tableData]);
 
@@ -39,13 +38,6 @@ export const Table = () => {
   const changeColumnsName = () => {
     setIsEdit((prev) => !prev);
     console.log(keys);
-    // if(!isEdit){
-    //   // отправляем новую дату (как ее сюда получить ?)
-    //   console.log('data')
-    // }
-    if (isEdit) {
-      console.log("save");
-    }
   };
 
   return (
