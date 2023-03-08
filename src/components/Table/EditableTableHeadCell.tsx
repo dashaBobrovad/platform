@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+import { IKey } from "../../types/IKey";
 
 interface IEditableTableHeadCell {
-  value: string;
+  item: IKey;
   index: number;
 }
 export const EditableTableHeadCell = ({
-  value,
+  item,
   index,
 }: IEditableTableHeadCell) => {
-  const [state, setState] = useState(value);
+  const [state, setState] = useState(item.name);
 
   return (
     // <input
@@ -21,7 +22,7 @@ export const EditableTableHeadCell = ({
       value={state}
       onChange={({ target }) => setState(target.value)}
       type="text"
-      name={value}
+      name={item.key}
     />
   );
 };

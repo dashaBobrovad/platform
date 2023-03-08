@@ -1,19 +1,41 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { fetchTableData } from "../../data/asyncActions/data";
-import useTable from "../../data/hooks/useTable";
+import usePagination from "../../data/hooks/usePagination";
 import { useTypedDispatch } from "../../data/hooks/useTypedDispatch";
 import { useTypedSelector } from "../../data/hooks/useTypedSelector";
 import { ITableRow } from "../../types/ITableRow";
 import { TableHead, TableFooter, TableRow } from "../../components";
+import { IKey } from "../../types/IKey";
 
 export const Table = () => {
   const tableData = useTypedSelector((state) => state.table.data);
-  const tableKeys = useTypedSelector((state) => state.table.columns);
+  // const tableKeys = useTypedSelector((state) => state.table.columns);
   const dispatch = useTypedDispatch();
+
+  const [keys, setKeys] = useState<IKey[]>([]);
 
   useEffect(() => {
     dispatch(fetchTableData());
   }, []);
+
+
+  useEffect(() => {
+    console.log(keys)
+  }, [keys]);
+
+  useEffect(() => {
+    tableData.length > 0 &&
+      setKeys(
+        Object.keys(tableData[0]).map((key, index) => {
+          return {
+            id: index,
+            key: key,
+            name: key,
+            isHidden: false,
+          };
+        })
+      );
+  }, [tableData]);
 
   const [hiddenColumn, setHiddenColumn] = useState<null | number>(null);
 
@@ -21,32 +43,33 @@ export const Table = () => {
     setHiddenColumn(id);
   };
 
-  const hiddenClassReturner = useCallback(
-    (item: ITableRow, value: string | number) => {
-      if (hiddenColumn !== null) {
-        // скрывать сразу несколько (создать отдельный список со скрытыми колонками и выводить класс в зависимости от этого )
-        // сделать возможность показывать ячейку снова (для этого не до конца ее закрывать)
-        if (
-          (item as { [k in string]: any })[tableKeys[hiddenColumn]] === value
-        ) {
-          return "hide";
-        }
-      }
-    },
-    [hiddenColumn, tableKeys]
-  );
+  // const hiddenClassReturner = useCallback(
+  //   (item: ITableRow, value: string | number) => {
+  //     if (hiddenColumn !== null) {
+  //       // скрывать сразу несколько (создать отдельный список со скрытыми колонками и выводить класс в зависимости от этого )
+  //       // сделать возможность показывать ячейку снова (для этого не до конца ее закрывать)
+  //       // if ((item as { [k in string]: any })[keys[hiddenColumn]] === value) {
+  //       //   return "hide";
+  //       // }
+  //     }
+  //   },
+  //   [hiddenColumn, keys]
+  // );
 
   const [page, setPage] = useState<number>(1);
-  const { slice, range } = useTable(tableData, page, 4);
+  const { slice, range } = usePagination(tableData, page, 4);
 
   const [isEdit, setIsEdit] = useState<boolean>(false);
-  
-  const changeColumnsName = () => {
-    setIsEdit(prev => !prev);
 
-    if(!isEdit){
-      // отправляем новую дату (как ее сюда получить ?)
-      console.log('data')
+  const changeColumnsName = () => {
+    setIsEdit((prev) => !prev);
+    console.log(keys);
+    // if(!isEdit){
+    //   // отправляем новую дату (как ее сюда получить ?)
+    //   console.log('data')
+    // }
+    if (isEdit) {
+      console.log("save");
     }
   };
 
@@ -55,24 +78,31 @@ export const Table = () => {
       <button onClick={() => changeColumnsName()}>
         {isEdit ? "save" : "change columns name"}
       </button>
-      <table>
-        <TableHead
-          columns={tableKeys}
-          hiddenColumn={hiddenColumn}
-          toggleColumn={toggleColumn}
-          isEdit={isEdit}
-        />
-        <tbody>
-          {(slice as ITableRow[]).map((item: ITableRow, index: number) => (
-            <TableRow
-              item={item}
-              index={index}
-              hiddenClassReturner={hiddenClassReturner}
-              key={`${item.name}-${index}`}
+  
+        <table>
+          {keys.length > 0 && (
+            <TableHead
+              columns={keys}
+              hiddenColumn={hiddenColumn}
+              toggleColumn={toggleColumn}
+              isEdit={isEdit}
+              setKeys={setKeys}
             />
-          ))}
-        </tbody>
-      </table>
+          )}
+
+          <tbody>
+            {(slice as ITableRow[]).map((item: ITableRow, index: number) => (
+              <TableRow
+                item={item}
+                index={index}
+                keys={keys}
+                // hiddenClassReturner={hiddenClassReturner}
+                key={`${item.name}-${index}`}
+              />
+            ))}
+          </tbody>
+        </table>
+
       <TableFooter range={range} slice={slice} setPage={setPage} page={page} />
     </React.Fragment>
   );

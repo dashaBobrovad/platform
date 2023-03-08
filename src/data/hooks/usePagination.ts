@@ -1,4 +1,4 @@
-import { ITableRow } from './../../types/ITableRow';
+import { ITableRow } from '../../types/ITableRow';
 import { useState, useEffect } from "react";
 
 const calculateRange = (data: ITableRow[], rowsPerPage: number) => {
@@ -14,7 +14,7 @@ const sliceData = (data: ITableRow[], page: number, rowsPerPage: number) => {
   return data.slice((page - 1) * rowsPerPage, page * rowsPerPage);
 };
 
-const useTable = (data: ITableRow[], page: number, rowsPerPage: number) => {
+const usePagination = (data: ITableRow[], page: number, rowsPerPage: number) => {
   const [tableRange, setTableRange] = useState<number[]>([]);
   const [slice, setSlice] = useState<ITableRow[]>([]);
 
@@ -29,4 +29,4 @@ const useTable = (data: ITableRow[], page: number, rowsPerPage: number) => {
   return { slice, range: tableRange };
 };
 
-export default useTable;
+export default usePagination;

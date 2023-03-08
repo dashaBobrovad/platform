@@ -1,38 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 import { EditableTableHeadCell } from "../../components";
+import { IKey } from "../../types/IKey";
 
 interface ITableHead {
-  columns: string[];
+  columns: any;
   hiddenColumn: number | null;
   toggleColumn: (id: number) => void;
   isEdit: boolean;
+  setKeys: any;
 }
 export const TableHead = ({
   columns,
   hiddenColumn,
   toggleColumn,
   isEdit,
+  setKeys,
 }: ITableHead) => {
-
   return (
     <thead>
       <tr>
         {/* <input name="column" type="checkbox" value="1" onClick={() => toggleColumn()} checked /> */}
         {columns &&
-          columns.map((item: string, index: number) => (
-            <th key={item} className={hiddenColumn === index ? "hide" : ""}>
+          columns.map((item: IKey, index: number) => (
+            <th key={item.key} className={item.isHidden ? "hide" : ""}>
               {isEdit ? (
-                <EditableTableHeadCell
-                  value={columns[index]}
-                  index={index}
-                />
+                <EditableTableHeadCell item={item} index={index} />
               ) : (
-                <span>{item}</span>
+                <span>{item.name}</span>
               )}
-              <button onClick={() => toggleColumn(index)}>hide</button>
+              {!item.isHidden ? (
+                <button
+                  onClick={() =>
+                    setKeys((prev: any) =>
+                      prev.map((item: any) =>
+                        item.id === index
+                          ? { ...item, isHidden: true }
+                          : { ...item }
+                      )
+                    )
+                  }
+                >
+                  hide
+                </button>
+              ) : (
+                <button
+                  onClick={() =>
+                    setKeys((prev: any) =>
+                      prev.map((item: any) =>
+                        item.id === index
+                          ? { ...item, isHidden: false }
+                          : { ...item }
+                      )
+                    )
+                  }
+                >
+                  show
+                </button>
+              )}
             </th>
           ))}
       </tr>
     </thead>
+    // <div>
+
+    // </div>
   );
 };

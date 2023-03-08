@@ -21,7 +21,7 @@ code {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  /* width: 100%; */
 }
 
 td, th {
@@ -44,7 +44,7 @@ tr:nth-child(even) {
 }
 
 .hide{
-  max-width: 10px;
+  max-width: 40px;
   overflow: hidden;
-  /* display: none; */
+  opacity: 0.5;
 }

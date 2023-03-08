@@ -12,7 +12,7 @@ export const fetchTableData = () => {
       .get("http://localhost:3000/db/data.json")
       .then((response) => {
         dispatch(getTableDataAction(response.data));
-        dispatch(getTableColumnsAction(Object.keys(response.data[0])));
+        // dispatch(getTableColumnsAction(Object.keys(response.data[0])));
       })
       .catch((e: unknown) => {
         const error = e as AxiosError;
