@@ -5,13 +5,12 @@ import { IKey } from "../../types/IKey";
 
 interface ITableRowProps {
   item: ITableRow;
-  index: number;
   keys: IKey[];
 }
-export const TableRow = ({ item, index, keys }: ITableRowProps) => {
-  const [isModal, setModal] = useState<boolean>(false);
+export const TableRow = ({ item, keys }: ITableRowProps) => {
+  const [isModal, setModal] = useState(false);
 
-  const openModal = (event: any) => {
+  const openModal = (event: React.MouseEvent) => {
     if (event.detail === 2) {
       setModal(true);
     }

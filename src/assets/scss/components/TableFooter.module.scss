@@ -1,4 +1,4 @@
-@import "../init//vars.scss";
+@import '../init//vars.scss';
 
 .tableFooter {
   padding: 8px 0px;
@@ -21,13 +21,13 @@
     cursor: pointer;
     margin-right: 4px;
     margin-left: 4px;
-  }
-  &__activeButton {
-    color: $white;
-    background: $primary;
-  }
-  &__inactiveButton {
-    color: $black;
-    background: $white;
+    &_activeButton {
+      color: $white;
+      background: $primary;
+    }
+    &_inactiveButton {
+      color: $black;
+      background: $white;
+    }
   }
 }

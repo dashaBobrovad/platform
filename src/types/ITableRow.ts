@@ -4,6 +4,4 @@ export interface ITableRow {
   model: string;
   manufacturer: string;
   passengers: string;
-  created: string;
-  edited: string;
 }

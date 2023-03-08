@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from 'react';
 
-import s from "../../assets/scss/components/TableFooter.module.scss";
-import { ITableRow } from "../../types/ITableRow";
+import s from '../../assets/scss/components/TableFooter.module.scss';
+import {ITableRow} from '../../types/ITableRow';
 
 interface ITableFooter {
   range: number[];
@@ -10,7 +10,7 @@ interface ITableFooter {
   slice: ITableRow[];
 }
 
-export const TableFooter = ({ range, setPage, page, slice }: ITableFooter) => {
+export const TableFooter = ({range, setPage, page, slice}: ITableFooter) => {
   useEffect(() => {
     if (slice.length < 1 && page !== 1) {
       setPage(page - 1);
@@ -22,7 +22,9 @@ export const TableFooter = ({ range, setPage, page, slice }: ITableFooter) => {
         <button
           key={index}
           className={`${s.tableFooter__button} ${
-            page === el ? s.tableFooter__activeButton : s.tableFooter__inactiveButton
+            page === el
+              ? s.tableFooter__button_activeButton
+              : s.tableFooter__button_inactiveButton
           }`}
           onClick={() => setPage(el)}
         >
