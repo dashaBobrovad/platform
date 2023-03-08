@@ -29,6 +29,11 @@ td, th {
   text-align: left;
   padding: 8px;
 }
+
+td{
+  cursor: pointer;
+}
+
 th{
   color: var(--primary);
 }
