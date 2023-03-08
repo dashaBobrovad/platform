@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 let listenerCallbacks = new WeakMap();
 
 let observer: any;
 
-function handleIntersections(entries: any) {
+function handleIntersections(entries: any[]) {
   entries.forEach((entry: any) => {
     if (listenerCallbacks.has(entry.target)) {
       let cb = listenerCallbacks.get(entry.target);
@@ -21,14 +21,14 @@ function handleIntersections(entries: any) {
 function getIntersectionObserver() {
   if (observer === undefined) {
     observer = new IntersectionObserver(handleIntersections, {
-      rootMargin: '100px',
-      threshold: '0.15' as any,
+      rootMargin: "100px",
+      threshold: "0.15" as unknown as number | number[],
     });
   }
   return observer;
 }
 
-function useIntersection(elem: any, callback: any) {
+function useIntersection(elem: any, callback: () => void) {
   useEffect(() => {
     let target = elem.current;
     let observer = getIntersectionObserver();
@@ -42,4 +42,4 @@ function useIntersection(elem: any, callback: any) {
   }, []);
 }
 
-export {useIntersection};
+export { useIntersection };

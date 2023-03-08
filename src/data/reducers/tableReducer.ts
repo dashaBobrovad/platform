@@ -6,8 +6,7 @@ import {
 } from "../../types/tableReducerTypes";
 
 const initialState: ITableState = {
-  data: [],
-  columns: [],
+  data: []
 };
 
 const tableReducer = (
@@ -20,16 +19,6 @@ const tableReducer = (
         ...state,
         data: [...action.payload],
       };
-    case TableActionTypes.GET_COLUMNS:
-      return {
-        ...state,
-        columns: [...action.payload],
-      };
-    // case TableActionTypes.CHANGE_COLUMN:
-    //     return{
-    //         ...state,
-    //         columns: state.columns.map(n => n.id === action.newObject.id ? action.newObject : n),
-    //     }
     default:
       return state;
   }
@@ -40,15 +29,5 @@ const getTableDataAction = (payload: ITableRow[]) => ({
   payload,
 });
 
-const getTableColumnsAction = (payload: string[]) => ({
-  type: TableActionTypes.GET_COLUMNS,
-  payload,
-});
-
-// const changeTableColumnAction = (payload: number) => ({
-//     type: TableActionTypes.CHANGE_COLUMN,
-//     payload
-// })
-
-export { getTableDataAction, getTableColumnsAction };
+export { getTableDataAction };
 export default tableReducer;

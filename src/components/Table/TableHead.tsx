@@ -3,14 +3,14 @@ import { EditableTableHeadCell } from "../../components";
 import { IKey } from "../../types/IKey";
 
 interface ITableHead {
-  columns: any;
+  columns: IKey[];
   isEdit: boolean;
   setKeys: any;
 }
 export const TableHead = ({ columns, isEdit, setKeys }: ITableHead) => {
   const handleHide = (index: number, isHidden: boolean) => {
-    setKeys((prev: any) =>
-      prev.map((item: any) =>
+    setKeys((prev: IKey[]) =>
+      prev.map((item: IKey) =>
         item.id === index ? { ...item, isHidden: isHidden } : { ...item }
       )
     );

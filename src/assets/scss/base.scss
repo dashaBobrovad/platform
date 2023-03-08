@@ -18,12 +18,14 @@ code {
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
+  position: relative;
   /* width: 100%; */
 }
 
 tbody {
   overflow: scroll;
 }
+
 td,
 th {
   border: 1px solid $primary;

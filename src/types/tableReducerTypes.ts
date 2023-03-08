@@ -1,14 +1,11 @@
 import { ITableRow } from "./ITableRow";
 
 export enum TableActionTypes{
-  GET_DATA = 'GET_DATA',
-  GET_COLUMNS = 'GET_COLUMNS',
-  CHANGE_COLUMN = 'CHANGE_COLUMN'
+  GET_DATA = 'GET_DATA'
 }
 
 export interface ITableState{
   data: ITableRow[];
-  columns: string[];
 }
 
 interface IGetDataAction {
@@ -16,10 +13,4 @@ interface IGetDataAction {
   payload: ITableRow[];
 }
 
-interface IGetColumnsAction {
-  type: TableActionTypes.GET_COLUMNS;
-  payload: string[];
-}
-
-
-export type TableAction = IGetDataAction | IGetColumnsAction | any; // action1 | action2
+export type TableAction = IGetDataAction; // action1 | action2
