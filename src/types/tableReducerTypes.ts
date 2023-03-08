@@ -2,7 +2,8 @@ import { ITableRow } from "./ITableRow";
 
 export enum TableActionTypes{
   GET_DATA = 'GET_DATA',
-  GET_COLUMNS = 'GET_COLUMNS'
+  GET_COLUMNS = 'GET_COLUMNS',
+  CHANGE_COLUMN = 'CHANGE_COLUMN'
 }
 
 export interface ITableState{

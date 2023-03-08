@@ -1,25 +1,38 @@
-import React from 'react';
+import React from "react";
+import { EditableTableHeadCell } from "../../components";
 
 interface ITableHead {
-    columns: string[],
-    hiddenColumn: number | null,
-    toggleColumn: (id: number) => void
+  columns: string[];
+  hiddenColumn: number | null;
+  toggleColumn: (id: number) => void;
+  isEdit: boolean;
 }
-export const TableHead = ({ columns, hiddenColumn,toggleColumn }: ITableHead) => {
-    return (
-        <thead>
-        <tr>
-          {/* <input name="column" type="checkbox" value="1" onClick={() => toggleColumn()} checked /> */}
-          {columns &&
-            columns.map((item: string, index: number) => (
-              // эдитабл и неэдитабл, по клику переключаем; вводим значение - его перезаписываем редакс (сделать экшн для change, сохраняем - значение поменялось )
-              <td key={item} className={hiddenColumn === index ? "hide" : ""}>
-                {item}
-                <button onClick={() => toggleColumn(index)}>hide</button>
-              </td>
-            ))}
-        </tr>
-      </thead>
-    )
-  }
-  
+export const TableHead = ({
+  columns,
+  hiddenColumn,
+  toggleColumn,
+  isEdit,
+}: ITableHead) => {
+
+  return (
+    <thead>
+      <tr>
+        {/* <input name="column" type="checkbox" value="1" onClick={() => toggleColumn()} checked /> */}
+        {columns &&
+          columns.map((item: string, index: number) => (
+            <td key={item} className={hiddenColumn === index ? "hide" : ""}>
+              {isEdit ? (
+                <EditableTableHeadCell
+                  value={columns[index]}
+                  index={index}
+                />
+              ) : (
+                <span>{item}</span>
+              )}
+              <button onClick={() => toggleColumn(index)}>hide</button>
+            </td>
+          ))}
+      </tr>
+    </thead>
+  );
+};

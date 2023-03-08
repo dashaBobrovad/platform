@@ -39,13 +39,28 @@ export const Table = () => {
   const [page, setPage] = useState<number>(1);
   const { slice, range } = useTable(tableData, page, 4);
 
+  const [isEdit, setIsEdit] = useState<boolean>(false);
+  
+  const changeColumnsName = () => {
+    setIsEdit(prev => !prev);
+
+    if(!isEdit){
+      // отправляем новую дату (как ее сюда получить ?)
+      console.log('data')
+    }
+  };
+
   return (
     <React.Fragment>
+      <button onClick={() => changeColumnsName()}>
+        {isEdit ? "save" : "change columns name"}
+      </button>
       <table>
         <TableHead
           columns={tableKeys}
           hiddenColumn={hiddenColumn}
           toggleColumn={toggleColumn}
+          isEdit={isEdit}
         />
         <tbody>
           {(slice as ITableRow[]).map((item: ITableRow, index: number) => (
@@ -53,6 +68,7 @@ export const Table = () => {
               item={item}
               index={index}
               hiddenClassReturner={hiddenClassReturner}
+              key={`${item.name}-${index}`}
             />
           ))}
         </tbody>

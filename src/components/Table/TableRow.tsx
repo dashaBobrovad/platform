@@ -14,7 +14,7 @@ export const TableRow = ({
   hiddenClassReturner,
 }: ITableRowProps) => {
   return (
-    <tr key={`${item.name}-${index}`}>
+    <tr>
       {/* придумать красивую логику - отдельная ф-я или записывать в redax скрытую колонку + memo (лучше стейт, нам в редаксе это не надо)*/}
       <td className={hiddenClassReturner(item, item.id)}>{item.id}</td>
       <td className={hiddenClassReturner(item, item.name)}>{item.name}</td>
