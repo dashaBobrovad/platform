@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "name": "Sand Crawler",
+    "model": "Digger Crawler",
+    "manufacturer": "Corellia Mining Corporation",
+    "passengers": "30",
+    "created": "2014-12-10T15:36:25.724000Z",
+    "edited": "2014-12-20T21:30:21.661000Z"
+  },
+  {
+    "id": 2,
+    "name": "T-16 skyhopper",
+    "model": "Digger Crawler",
+    "manufacturer": "Incom Corporation",
+    "passengers": "1",
+    "created": "2014-12-10T16:01:52.434000Z",
+    "edited": "2014-12-20T21:30:21.665000Z"
+  },
+  {
+    "id": 3,
+    "name": "X-34 landspeeder",
+    "model": "Digger Crawler",
+    "manufacturer": "SoroSuub Corporation",
+    "passengers": "1",
+    "created": "2014-12-10T16:13:52.586000Z",
+    "edited": "2014-12-20T21:30:21.668000Z"
+  },
+  {
+    "id": 4,
+    "name": "TIE/LN starfighter",
+    "model": "Twin Ion Engine/Ln Starfighter",
+    "manufacturer": "Sienar Fleet Systems",
+    "passengers": "0",
+    "created": "2014-12-10T16:33:52.860000Z",
+    "edited": "2014-12-20T21:30:21.670000Z"
+  },
+  {
+    "id": 5,
+    "name": "Snowspeeder",
+    "model": "t-47 airspeeder",
+    "manufacturer": "Incom corporation",
+    "passengers": "0",
+    "created": "2014-12-15T12:22:12Z",
+    "edited": "2014-12-20T21:30:21.672000Z"
+  },
+  {
+    "id": 6,
+    "name": "TIE bomber",
+    "model": "TIE/sa bomber",
+    "manufacturer": "Sienar Fleet Systems",
+    "passengers": "0",
+    "created": "2014-12-15T12:33:15.838000Z",
+    "edited": "2014-12-20T21:30:21.675000Z"
+  },
+  {
+    "id": 7,
+    "name": "AT-AT",
+    "model": "All Terrain Armored Transport",
+    "manufacturer": "Kuat Drive Yards, Imperial Department of Military Research",
+    "passengers": "40",
+    "created": "2014-12-15T12:38:25.937000Z",
+    "edited": "2014-12-20T21:30:21.677000Z"
+  },
+  {
+    "id": 8,
+    "name": "AT-ST",
+    "model": "All Terrain Scout Transport",
+    "manufacturer": "Kuat Drive Yards, Imperial Department of Military Research",
+    "passengers": "0",
+    "created": "2014-12-15T12:46:42.384000Z",
+    "edited": "2014-12-20T21:30:21.679000Z"
+  },
+  {
+    "id": 9,
+    "name": "Storm IV Twin-Pod cloud car",
+    "model": "Storm IV Twin-Pod",
+    "manufacturer": "Bespin Motors",
+    "passengers": "0",
+    "created": "2014-12-15T12:58:50.530000Z",
+    "edited": "2014-12-20T21:30:21.681000Z"
+  },
+  {
+    "id": 10,
+    "name": "Sail barge",
+    "model": "Modified Luxury Sail Barge",
+    "manufacturer": "Ubrikkian Industries Custom Vehicle Division",
+    "passengers": "500",
+    "created": "2014-12-18T10:44:14.217000Z",
+    "edited": "2014-12-20T21:30:21.684000Z"
+  },
+  {
+    "id": 11,
+    "name": "Sand Crawler",
+    "model": "Digger Crawler",
+    "manufacturer": "Corellia Mining Corporation",
+    "passengers": "30",
+    "created": "2014-12-10T15:36:25.724000Z",
+    "edited": "2014-12-20T21:30:21.661000Z"
+  },
+  {
+    "id": 12,
+    "name": "T-16 skyhopper",
+    "model": "Digger Crawler",
+    "manufacturer": "Incom Corporation",
+    "passengers": "1",
+    "created": "2014-12-10T16:01:52.434000Z",
+    "edited": "2014-12-20T21:30:21.665000Z"
+  },
+  {
+    "id": 13,
+    "name": "X-34 landspeeder",
+    "model": "Digger Crawler",
+    "manufacturer": "SoroSuub Corporation",
+    "passengers": "1",
+    "created": "2014-12-10T16:13:52.586000Z",
+    "edited": "2014-12-20T21:30:21.668000Z"
+  },
+  {
+    "id": 14,
+    "name": "TIE/LN starfighter",
+    "model": "Twin Ion Engine/Ln Starfighter",
+    "manufacturer": "Sienar Fleet Systems",
+    "passengers": "0",
+    "created": "2014-12-10T16:33:52.860000Z",
+    "edited": "2014-12-20T21:30:21.670000Z"
+  },
+  {
+    "id": 15,
+    "name": "Snowspeeder",
+    "model": "t-47 airspeeder",
+    "manufacturer": "Incom corporation",
+    "passengers": "0",
+    "created": "2014-12-15T12:22:12Z",
+    "edited": "2014-12-20T21:30:21.672000Z"
+  },
+  {
+    "id": 16,
+    "name": "TIE bomber",
+    "model": "TIE/sa bomber",
+    "manufacturer": "Sienar Fleet Systems",
+    "passengers": "0",
+    "created": "2014-12-15T12:33:15.838000Z",
+    "edited": "2014-12-20T21:30:21.675000Z"
+  },
+  {
+    "id": 17,
+    "name": "AT-AT",
+    "model": "All Terrain Armored Transport",
+    "manufacturer": "Kuat Drive Yards, Imperial Department of Military Research",
+    "passengers": "40",
+    "created": "2014-12-15T12:38:25.937000Z",
+    "edited": "2014-12-20T21:30:21.677000Z"
+  },
+  {
+    "id": 18,
+    "name": "AT-ST",
+    "model": "All Terrain Scout Transport",
+    "manufacturer": "Kuat Drive Yards, Imperial Department of Military Research",
+    "passengers": "0",
+    "created": "2014-12-15T12:46:42.384000Z",
+    "edited": "2014-12-20T21:30:21.679000Z"
+  },
+  {
+    "id": 19,
+    "name": "Storm IV Twin-Pod cloud car",
+    "model": "Storm IV Twin-Pod",
+    "manufacturer": "Bespin Motors",
+    "passengers": "0",
+    "created": "2014-12-15T12:58:50.530000Z",
+    "edited": "2014-12-20T21:30:21.681000Z"
+  },
+  {
+    "id": 20,
+    "name": "Sail barge",
+    "model": "Modified Luxury Sail Barge",
+    "manufacturer": "Ubrikkian Industries Custom Vehicle Division",
+    "passengers": "500",
+    "created": "2014-12-18T10:44:14.217000Z",
+    "edited": "2014-12-20T21:30:21.684000Z"
+  },
+  {
+    "id": 21,
+    "name": "Sand Crawler",
+    "model": "Digger Crawler",
+    "manufacturer": "Corellia Mining Corporation",
+    "passengers": "30",
+    "created": "2014-12-10T15:36:25.724000Z",
+    "edited": "2014-12-20T21:30:21.661000Z"
+  },
+  {
+    "id": 22,
+    "name": "T-16 skyhopper",
+    "model": "Digger Crawler",
+    "manufacturer": "Incom Corporation",
+    "passengers": "1",
+    "created": "2014-12-10T16:01:52.434000Z",
+    "edited": "2014-12-20T21:30:21.665000Z"
+  },
+  {
+    "id": 23,
+    "name": "X-34 landspeeder",
+    "model": "Digger Crawler",
+    "manufacturer": "SoroSuub Corporation",
+    "passengers": "1",
+    "created": "2014-12-10T16:13:52.586000Z",
+    "edited": "2014-12-20T21:30:21.668000Z"
+  },
+  {
+    "id": 24,
+    "name": "TIE/LN starfighter",
+    "model": "Twin Ion Engine/Ln Starfighter",
+    "manufacturer": "Sienar Fleet Systems",
+    "passengers": "0",
+    "created": "2014-12-10T16:33:52.860000Z",
+    "edited": "2014-12-20T21:30:21.670000Z"
+  },
+  {
+    "id": 25,
+    "name": "Snowspeeder",
+    "model": "t-47 airspeeder",
+    "manufacturer": "Incom corporation",
+    "passengers": "0",
+    "created": "2014-12-15T12:22:12Z",
+    "edited": "2014-12-20T21:30:21.672000Z"
+  },
+  {
+    "id": 26,
+    "name": "TIE bomber",
+    "model": "TIE/sa bomber",
+    "manufacturer": "Sienar Fleet Systems",
+    "passengers": "0",
+    "created": "2014-12-15T12:33:15.838000Z",
+    "edited": "2014-12-20T21:30:21.675000Z"
+  },
+  {
+    "id": 27,
+    "name": "AT-AT",
+    "model": "All Terrain Armored Transport",
+    "manufacturer": "Kuat Drive Yards, Imperial Department of Military Research",
+    "passengers": "40",
+    "created": "2014-12-15T12:38:25.937000Z",
+    "edited": "2014-12-20T21:30:21.677000Z"
+  },
+  {
+    "id": 28,
+    "name": "AT-ST",
+    "model": "All Terrain Scout Transport",
+    "manufacturer": "Kuat Drive Yards, Imperial Department of Military Research",
+    "passengers": "0",
+    "created": "2014-12-15T12:46:42.384000Z",
+    "edited": "2014-12-20T21:30:21.679000Z"
+  },
+  {
+    "id": 29,
+    "name": "Storm IV Twin-Pod cloud car",
+    "model": "Storm IV Twin-Pod",
+    "manufacturer": "Bespin Motors",
+    "passengers": "0",
+    "created": "2014-12-15T12:58:50.530000Z",
+    "edited": "2014-12-20T21:30:21.681000Z"
+  },
+  {
+    "id": 30,
+    "name": "Sail barge",
+    "model": "Modified Luxury Sail Barge",
+    "manufacturer": "Ubrikkian Industries Custom Vehicle Division",
+    "passengers": "500",
+    "created": "2014-12-18T10:44:14.217000Z",
+    "edited": "2014-12-20T21:30:21.684000Z"
+  }
+]
