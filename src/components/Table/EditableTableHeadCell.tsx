@@ -14,7 +14,7 @@ export const EditableTableHeadCell = ({
 
   return (
     <input
-      value={item.name}
+      value={item.dataField}
       onChange={(e) => changeName(index, e.target.value)}
       type="text"
       name={item.key}

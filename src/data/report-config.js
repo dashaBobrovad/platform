@@ -7,7 +7,7 @@ export const config = {
       caption: "id caption",
       dataType: "string",
       format: "UTF-8",
-      alignment: "left",
+      alignment: "right",
     },
     {
       dataField: "name",

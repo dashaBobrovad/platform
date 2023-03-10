@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ITableRow } from "../../types/ITableRow";
 import { Modal } from "../../components";
 import { IKey } from "../../types/IKey";
 
 interface ITableRowProps {
   item: ITableRow;
-  keys: IKey[];
+  properties: IKey[];
 }
-export const TableRow = ({ item, keys }: ITableRowProps) => {
+export const TableRow = ({ item, properties }: ITableRowProps) => {
   const [isModal, setModal] = useState(false);
-
   const openModal = (event: React.MouseEvent) => {
     if (event.detail === 2) {
       setModal(true);
@@ -21,8 +20,10 @@ export const TableRow = ({ item, keys }: ITableRowProps) => {
   };
 
   const hideClassReturner = (index: number) => {
-    return keys[index].isHidden ? "hide-column" : "";
+    return properties[index].isHidden ? "hide-column" : "";
   };
+
+
 
   return (
     <React.Fragment>
@@ -30,7 +31,7 @@ export const TableRow = ({ item, keys }: ITableRowProps) => {
 
       <tr>
         {Object.keys(item).map((key: string, index: number) => (
-          <td onClick={openModal} className={hideClassReturner(index)}>
+          <td onClick={openModal} className={hideClassReturner(index)} style={{ textAlign: properties[index].alignment }}>
             {item[key as keyof ITableRow]}
           </td>
         ))}
