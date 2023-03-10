@@ -1,4 +1,4 @@
-import { IKey } from './../../types/IKey';
+import { IColumn } from '../../types/IColumn';
 import { ITableRow } from "./../../types/ITableRow";
 import {
   ITableState,

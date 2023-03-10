@@ -1,4 +1,4 @@
-import { IKey } from './IKey';
+import { IColumn } from './IColumn';
 import { ITableRow } from "./ITableRow";
 
 export enum TableActionTypes{
@@ -8,7 +8,7 @@ export enum TableActionTypes{
 
 export interface ITableState{
   data: ITableRow[];
-  columns: IKey[];
+  columns: IColumn[];
 }
 
 interface IGetDataAction {

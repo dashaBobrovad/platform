@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { ITableRow } from "../../types/ITableRow";
 import { Modal } from "../../components";
-import { IKey } from "../../types/IKey";
+import { IColumn } from "../../types/IColumn";
 
 interface ITableRowProps {
   item: ITableRow;
-  properties: IKey[];
+  properties: IColumn[];
 }
 export const TableRow = ({ item, properties }: ITableRowProps) => {
   const [isModal, setModal] = useState(false);
@@ -31,7 +31,7 @@ export const TableRow = ({ item, properties }: ITableRowProps) => {
 
       <tr>
         {Object.keys(item).map((key: string, index: number) => (
-          <td onClick={openModal} className={hideClassReturner(index)} style={{ textAlign: properties[index].alignment }}>
+          <td key={key} onClick={openModal} className={hideClassReturner(index)} style={{ textAlign: properties[index].alignment as 'left' | 'right' }}>
             {item[key as keyof ITableRow]}
           </td>
         ))}

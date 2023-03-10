@@ -1,8 +1,8 @@
 import React from "react";
-import { IKey } from "../../types/IKey";
+import { IColumn } from "../../types/IColumn";
 
 interface IEditableTableHeadCell {
-  item: IKey;
+  item: IColumn;
   index: number;
   changeName: (index: number, name: string) => void;
 }
@@ -17,7 +17,7 @@ export const EditableTableHeadCell = ({
       value={item.dataField}
       onChange={(e) => changeName(index, e.target.value)}
       type="text"
-      name={item.key}
+      name={item.dataField}
     />
   );
 };

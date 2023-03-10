@@ -1,25 +1,25 @@
 import React from 'react';
 import { EditableTableHeadCell } from '../../components';
-import { IKey } from '../../types/IKey';
+import { IColumn } from '../../types/IColumn';
 
 interface ITableHead {
-  columns: IKey[];
+  columns: IColumn[];
   isEdit: boolean;
-  setColumns: React.Dispatch<React.SetStateAction<IKey[]>>;
+  setColumns: React.Dispatch<React.SetStateAction<IColumn[]>>;
 }
 export const TableHead = ({ columns, isEdit, setColumns }: ITableHead) => {
   const handleHide = (index: number) => {
     console.log();
-    setColumns((prev: IKey[]) =>
-      prev.map((item: IKey) =>
+    setColumns((prev: IColumn[]) =>
+      prev.map((item: IColumn) =>
         item.id === index ? { ...item, isHidden: !item.isHidden } : { ...item }
       )
     );
   };
 
   const changeName = (index: number, dataField: string) => {
-    setColumns((prev: IKey[]) =>
-      prev.map((item: IKey) =>
+    setColumns((prev: IColumn[]) =>
+      prev.map((item: IColumn) =>
         item.id === index ? { ...item, dataField } : { ...item }
       )
     );
@@ -28,8 +28,8 @@ export const TableHead = ({ columns, isEdit, setColumns }: ITableHead) => {
   return (
     <thead>
       <tr>
-        {columns.map((item: IKey, index: number) => (
-          <th key={item.key} className={item.isHidden ? 'hide-column' : ''}>
+        {columns.map((item: IColumn, index: number) => (
+          <th key={item.dataField} className={item.isHidden ? 'hide-column' : ''}>
             {isEdit ? (
               <EditableTableHeadCell
                 item={item}

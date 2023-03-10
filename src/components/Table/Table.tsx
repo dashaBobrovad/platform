@@ -5,14 +5,14 @@ import {useTypedDispatch} from '../../data/hooks/useTypedDispatch';
 import {useTypedSelector} from '../../data/hooks/useTypedSelector';
 import {ITableRow} from '../../types/ITableRow';
 import {TableHead, TableFooter, TableRow} from '../../components';
-import {IKey} from '../../types/IKey';
+import {IColumn} from '../../types/IColumn';
 import {config} from '../../data/report-config';
 
 export const Table = () => {
   const tableData = useTypedSelector(state => state.table.data);
   const dispatch = useTypedDispatch();
 
-  const [columns, setColumns] = useState<IKey[]>([]);
+  const [columns, setColumns] = useState<IColumn[]>([]);
 
   useEffect(() => {
     setTimeout(() => {
