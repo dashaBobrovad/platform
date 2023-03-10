@@ -12,7 +12,7 @@ export const Table = () => {
   const tableData = useTypedSelector(state => state.table.data);
   const dispatch = useTypedDispatch();
 
-  const [keys, setKeys] = useState<IKey[]>([]);
+  const [columns, setColumns] = useState<IKey[]>([]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -22,7 +22,7 @@ export const Table = () => {
 
   useEffect(() => {
     tableData.length > 0 &&
-      // setKeys(
+      // setColumns(
       //   Object.keys(tableData[0]).map((key, index) => ({
       //     id: index,
       //     key: key,
@@ -30,7 +30,7 @@ export const Table = () => {
       //     isHidden: false,
       //   }))
       // );
-      setKeys(
+      setColumns(
         config.colums.map((item, index) => ({
           ...item,
           id: index,
@@ -40,7 +40,6 @@ export const Table = () => {
 
   }, [tableData]);
 
-  useEffect(() => {console.log(keys)}, [keys])
   const [page, setPage] = useState(1);
   const {slice, range} = usePagination(tableData, page, 20);
 
@@ -52,19 +51,19 @@ export const Table = () => {
 
   return (
     <React.Fragment>
-      {keys.length ? (
+      {columns.length ? (
         <>
           <button onClick={() => handleEdit()}>
             {isEdit ? 'save' : 'change columns name'}
           </button>
           <table>
             <caption>{`${config?.name} #${config?.code}`}</caption>
-            <TableHead columns={keys} isEdit={isEdit} setKeys={setKeys} />
+            <TableHead columns={columns} isEdit={isEdit} setColumns={setColumns} />
             <tbody>
               {(slice as ITableRow[]).map((item: ITableRow, index: number) => (
                 <TableRow
                   item={item}
-                  properties={keys}
+                  properties={columns}
                   key={`${item.name}-${index}`}
                 />
               ))}

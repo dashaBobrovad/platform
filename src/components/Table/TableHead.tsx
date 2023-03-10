@@ -5,12 +5,12 @@ import { IKey } from '../../types/IKey';
 interface ITableHead {
   columns: IKey[];
   isEdit: boolean;
-  setKeys: React.Dispatch<React.SetStateAction<IKey[]>>;
+  setColumns: React.Dispatch<React.SetStateAction<IKey[]>>;
 }
-export const TableHead = ({ columns, isEdit, setKeys }: ITableHead) => {
+export const TableHead = ({ columns, isEdit, setColumns }: ITableHead) => {
   const handleHide = (index: number) => {
     console.log();
-    setKeys((prev: IKey[]) =>
+    setColumns((prev: IKey[]) =>
       prev.map((item: IKey) =>
         item.id === index ? { ...item, isHidden: !item.isHidden } : { ...item }
       )
@@ -18,7 +18,7 @@ export const TableHead = ({ columns, isEdit, setKeys }: ITableHead) => {
   };
 
   const changeName = (index: number, dataField: string) => {
-    setKeys((prev: IKey[]) =>
+    setColumns((prev: IKey[]) =>
       prev.map((item: IKey) =>
         item.id === index ? { ...item, dataField } : { ...item }
       )
